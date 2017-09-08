@@ -4,14 +4,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2017 | Allen</title>
+  <title>maven基础 | Allen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Allen">
-<meta property="og:url" content="http://allen1995.github.io/archives/2017/index.html">
+  <meta name="description" content="maven基础知识">
+<meta name="keywords" content="maven基础知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="maven基础">
+<meta property="og:url" content="http://allen1995.github.io/2017/09/06/maven基础/index.html">
 <meta property="og:site_name" content="Allen">
+<meta property="og:description" content="maven基础知识">
+<meta property="og:updated_time" content="2017-09-08T17:53:03.907Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Allen">
+<meta name="twitter:title" content="maven基础">
+<meta name="twitter:description" content="maven基础知识">
   
     <link rel="alternative" href="/atom.xml" title="Allen" type="application/atom+xml">
   
@@ -63,97 +68,88 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/06/maven基础/" class="archive-article-date">
-  <time datetime="2017-09-06T15:05:51.000Z" itemprop="datePublished">Sep 6</time>
+      <section id="main"><article id="post-maven基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/06/maven基础/" class="article-date">
+  <time datetime="2017-09-06T15:05:51.000Z" itemprop="datePublished">2017-09-06</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/06/maven基础/">maven基础</a>
+    <h1 class="article-title" itemprop="name">
+      maven基础
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/05/postName/" class="archive-article-date">
-  <time datetime="2017-09-05T06:31:38.000Z" itemprop="datePublished">Sep 5</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/05/postName/">postName</a>
-    </h1>
-  
+        <h1 id="maven基础知识"><a href="#maven基础知识" class="headerlink" title="maven基础知识"></a>maven基础知识</h1><hr>
+<a id="more"></a>
+<h2 id="什么事maven？"><a href="#什么事maven？" class="headerlink" title="什么事maven？"></a>什么事maven？</h2><ul>
+<li>maven是一个项目管理框架，主要是用来管理项目的生命周期以及项目之间的依赖关系。</li>
+</ul>
+<p>1.svn分享工程</p>
+<ul>
+<li>使用场景：将本地项目上传到svn上。</li>
+<li>步骤：右键项目————&gt;team————&gt;share project，然后指定上传路径，ok</li>
+</ul>
+<p>2.svn切换路径</p>
+<ul>
+<li>使用场景：项目更换地址后需要将本地项目的svn路径切换到新路径下。</li>
+<li>步骤：右键项目————&gt;properties————&gt;resource————&gt;点击项目路径右边的箭头，定位到项目的工作空间下的源文件，右键项目的源文件文件夹，<br>点击TortoiseSvn————&gt;relocate,然后去eclipse把项目switch到新路径下即可。</li>
+<li>说明：如果直接在eclipse里面切换，会报路径不能覆盖旧的svn路径的错误，必须要先修改源文件夹ip，才能正确切换。svn源文件夹也可以switch<br>地址，这里没有尝试过。</li>
+</ul>
+<p>3.从svn上导入maven项目</p>
+<ul>
+<li>这里只说明步骤，先从svn上导入项目，然后删除eclipse中的项目还是java工程，接下来删除eclipse中的工程，<em>不要勾选同时删除项目源文件<br></em>，然后接着导入已存在的本地的maven工程。</li>
+</ul>
+<p>4.maven在eclipse中的安装以及全局配置文件的设置</p>
+<ul>
+<li>window————&gt;perference————&gt;maven————&gt;setting路径下，可以配置maven启动时加载的配置文件<br>  1.global setting后面选择的路径，意思是配置maven的全局配置文件，如果这里配置里，不管你开哪个工作空间，都会加载这个配置文件，如果<br>这里不配置，则默认是c盘下的.m2文件夹下。<br>  2.另外有个user setting，这个是配置用户，也就是这个工作空间maven的配置文件，在没有配置全局setting的时候，才会加载这个配置文件。</li>
+</ul>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/08/26/my-first-blog/" class="archive-article-date">
-  <time datetime="2017-08-26T13:55:06.000Z" itemprop="datePublished">Aug 26</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/26/my-first-blog/">my-first-blog</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/08/26/hello-world/" class="archive-article-date">
-  <time datetime="2017-08-26T10:07:15.295Z" itemprop="datePublished">Aug 26</time>
-</a>
+    </div>
+    <footer class="article-footer">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/26/hello-world/">Hello World</a>
-    </h1>
-  
+        <a data-url="http://allen1995.github.io/2017/09/06/maven基础/" data-id="cj7c6mc8w00011svbnuigzf4h" class="article-share-link" data-share="baidu" data-title="maven基础">Share</a>
+      
 
-    </header>
+      
+        <a href="http://allen1995.github.io/2017/09/06/maven基础/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven基础知识/">maven基础知识</a></li></ul>
+
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/09/05/postName/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">postName</div>
+    </a>
   
+</nav>
 
+  
+</article>
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2017/09/06/maven基础/" data-title="maven基础" data-url="http://allen1995.github.io/2017/09/06/maven基础/"></div>
+  </section>
 </section>
       
       <aside id="sidebar">
