@@ -4,14 +4,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: 每周总结 | Allen</title>
+  <title>java基础之集合（一） | Allen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Allen">
-<meta property="og:url" content="http://allen1995.github.io/categories/每周总结/index.html">
+  <meta name="description" content="java基础之集合（一）">
+<meta name="keywords" content="java java集合">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java基础之集合（一）">
+<meta property="og:url" content="http://allen1995.github.io/2017/10/10/java基础之集合（一）/index.html">
 <meta property="og:site_name" content="Allen">
+<meta property="og:description" content="java基础之集合（一）">
+<meta property="og:updated_time" content="2017-10-10T15:24:34.138Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Allen">
+<meta name="twitter:title" content="java基础之集合（一）">
+<meta name="twitter:description" content="java基础之集合（一）">
   
     <link rel="alternative" href="/atom.xml" title="Allen" type="application/atom+xml">
   
@@ -63,40 +68,80 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/10/10/week1/" class="archive-article-date">
-  <time datetime="2017-10-10T09:11:40.000Z" itemprop="datePublished">Oct 10</time>
+      <section id="main"><article id="post-java基础之集合（一）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/10/java基础之集合（一）/" class="article-date">
+  <time datetime="2017-10-10T15:08:01.000Z" itemprop="datePublished">2017-10-10</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java基础/">java基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/10/week1/">week1</a>
+    <h1 class="article-title" itemprop="name">
+      java基础之集合（一）
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="java基础之集合（一）"><a href="#java基础之集合（一）" class="headerlink" title="java基础之集合（一）"></a>java基础之集合（一）</h1><a id="more"></a>
+<h2 id="集合总览"><a href="#集合总览" class="headerlink" title="集合总览"></a>集合总览</h2><p>Collection<br>    |–ArrayList: 底层使用的数据结构是数组，扩容办法是通过new一个新数组（长度增加50%），然后把原数组复制过去。<br>                  特点：查询速度快，增删慢。线程不同步，换句话说，效率更高。<br>    |–LinkedList: 底层使用的是链表数据结构。特点：增删速度快，查询速度很慢。<br>    |–Vector:底层使用的是数组。线程同步，jdk1.0以前使用，在jdk1.2以后被ArrayList取代</p>
+<h3 id="1-linkedList的特点"><a href="#1-linkedList的特点" class="headerlink" title="1,linkedList的特点"></a>1,linkedList的特点</h3><ul>
+<li><p>linkedList的特有方法：<br>addFirst();<br>addLast();</p>
+<p>getFirst();<br>getLast();<br>获取元素，但不删除元素。如果集合中没有元素，会出现NoSuchElementException</p>
+<p>removeFirst();<br>removeLast();<br>获取元素，但是元素被删除。如果集合中没有元素，会出现NoSuchElementException</p>
+</li>
+<li><p>jdk1.6以后出现了替代方法<br>offerFirst();<br>offerLast();</p>
+<p>peekFirst();<br>peekLast();<br>获取元素，但是元素不被删除。如果集合中没有元素，会返回null</p>
+<p>pollFirst();<br>pollLast();<br>获取元素，但是元素被删除。如果集合中没有元素，会返回null</p>
+</li>
+</ul>
 
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://allen1995.github.io/2017/10/10/java基础之集合（一）/" data-id="cj8lrccbo0000p8vb1tpg8kp9" class="article-share-link" data-share="baidu" data-title="java基础之集合（一）">Share</a>
+      
+
+      
+        <a href="http://allen1995.github.io/2017/10/10/java基础之集合（一）/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-java集合/">java java集合</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/10/week1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">week1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2017/10/10/java基础之集合（一）/" data-title="java基础之集合（一）" data-url="http://allen1995.github.io/2017/10/10/java基础之集合（一）/"></div>
+  </section>
 </section>
       
       <aside id="sidebar">
