@@ -4,14 +4,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: makedown脚本入门 | Allen</title>
+  <title>week1 | Allen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Allen">
-<meta property="og:url" content="http://allen1995.github.io/tags/makedown脚本入门/index.html">
+  <meta name="description" content="2017-10-17">
+<meta property="og:type" content="article">
+<meta property="og:title" content="week1">
+<meta property="og:url" content="http://allen1995.github.io/2017/10/10/week1/index.html">
 <meta property="og:site_name" content="Allen">
+<meta property="og:description" content="2017-10-17">
+<meta property="og:image" content="http://allen1995.github.io/2017/10/picture/week1-10-01.png">
+<meta property="og:updated_time" content="2017-10-10T10:18:51.722Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Allen">
+<meta name="twitter:title" content="week1">
+<meta name="twitter:description" content="2017-10-17">
+<meta name="twitter:image" content="http://allen1995.github.io/2017/10/picture/week1-10-01.png">
   
     <link rel="alternative" href="/atom.xml" title="Allen" type="application/atom+xml">
   
@@ -63,40 +69,145 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/05/postName/" class="archive-article-date">
-  <time datetime="2017-09-05T06:31:38.000Z" itemprop="datePublished">Sep 5</time>
+      <section id="main"><article id="post-week1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/10/week1/" class="article-date">
+  <time datetime="2017-10-10T09:11:40.000Z" itemprop="datePublished">2017-10-10</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/每周总结/">每周总结</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/05/postName/">postName</a>
+    <h1 class="article-title" itemprop="name">
+      week1
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="2017-10-17"><a href="#2017-10-17" class="headerlink" title="2017-10-17"></a>2017-10-17</h1><a id="more"></a>
+<h3 id="为什么要序列化对象？"><a href="#为什么要序列化对象？" class="headerlink" title="为什么要序列化对象？"></a>为什么要序列化对象？</h3><ul>
+<li>把对象的字节序列永久地保存到硬盘上，通常存放在一个文件中；</li>
+<li>在网络上传送对象的字节序列。<br><strong>*</strong>新建实体类的时候一定要序列化  <strong>**</strong></li>
+</ul>
+<h3 id="Nicescroll滚动条插件的用法"><a href="#Nicescroll滚动条插件的用法" class="headerlink" title="Nicescroll滚动条插件的用法"></a>Nicescroll滚动条插件的用法</h3><p>Nicescroll滚动条插件是一个非常强大的基于JQUERY的滚动条插件，样式可完全自定义，支持触摸事件，可在触摸屏上使用。</p>
+<ul>
+<li><p>最简单的用法如下：</p>
+<pre>
+$(document).ready(
+function() {
+  $("html").niceScroll();
+}
+);
+</pre>
+</li>
+<li><p>配置参数表：</p>
+<pre>
+$("#thisdiv").niceScroll({
+    cursorcolor: "#424242", // 改变滚动条颜色，使用16进制颜色值
+    cursoropacitymin: 0, // 当滚动条是隐藏状态时改变透明度, 值范围 1 到 0
+    cursoropacitymax: 1, // 当滚动条是显示状态时改变透明度, 值范围 1 到 0
+    cursorwidth: "5px", // 滚动条的宽度，单位：便素
+    cursorborder: "1px solid #fff", // CSS方式定义滚动条边框
+    cursorborderradius: "5px", // 滚动条圆角（像素）
+    zindex: "auto" | <number>, // 改变滚动条的DIV的z-index值
+    scrollspeed: 60, // 滚动速度
+    mousescrollstep: 40, // 鼠标滚轮的滚动速度 (像素)
+    touchbehavior: false, // 激活拖拽滚动
+    hwacceleration: true, // 激活硬件加速
+    boxzoom: false, // 激活放大box的内容
+    dblclickzoom: true, // (仅当 boxzoom=true时有效)双击box时放大
+    gesturezoom: true, // (仅 boxzoom=true 和触屏设备时有效) 激活变焦当out/in（两个手指外张或收缩）
+    grabcursorenabled: true // (仅当 touchbehavior=true) 显示“抓住”图标display "grab" icon
+    autohidemode: true, // 隐藏滚动条的方式, 可用的值:
+      true | // 无滚动时隐藏
+      "cursor" | // 隐藏
+      false | // 不隐藏,
+      "leave" | // 仅在指针离开内容时隐藏
+      "hidden" | // 一直隐藏
+      "scroll", // 仅在滚动时显示        
+    background: "", // 轨道的背景颜色
+    iframeautoresize: true, // 在加载事件时自动重置iframe大小
+    cursorminheight: 32, // 设置滚动条的最小高度 (像素)
+    preservenativescrolling: true, // 你可以用鼠标滚动可滚动区域的滚动条和增加鼠标滚轮事件
+    railoffset: false, // 可以使用top/left来修正位置
+    bouncescroll: false, // (only hw accell) 启用滚动跳跃的内容移动
+    spacebarenabled: true, // 当按下空格时使页面向下滚动
+    railpadding: { top: 0, right: 0, left: 0, bottom: 0 }, // 设置轨道的内间距
+    disableoutline: true, // 当选中一个使用nicescroll的div时，chrome浏览器中禁用outline
+    horizrailenabled: true, // nicescroll可以管理水平滚动
+    railalign: right, // 对齐垂直轨道
+    railvalign: bottom, // 对齐水平轨道
+    enabletranslate3d: true, // nicescroll 可以使用CSS变型来滚动内容
+    enablemousewheel: true, // nicescroll可以管理鼠标滚轮事件
+    enablekeyboard: true, // nicescroll可以管理键盘事件
+    smoothscroll: true, // ease动画滚动
+    sensitiverail: true, // 单击轨道产生滚动
+    enablemouselockapi: true, // 可以用鼠标锁定API标题 (类似对象拖动)
+    cursorfixedheight: false, // 修正光标的高度（像素）
+    hidecursordelay: 400, // 设置滚动条淡出的延迟时间（毫秒）
+    directionlockdeadzone: 6, // 设定死区，为激活方向锁定（像素）
+    nativeparentscrolling: true, // 检测内容底部便于让父级滚动
+    enablescrollonselection: true, // 当选择文本时激活内容自动滚动
+    cursordragspeed: 0.3, // 设置拖拽的速度
+    rtlmode: "auto", // DIV的水平滚动从左边开始
+    cursordragontouch: false, // 使用触屏模式来实现拖拽
+    oneaxismousemode: "auto", // 当只有水平滚动时可以用鼠标滚轮来滚动，如果设为false则不支持水平滚动，如果设为auto支持双轴滚动
+    scriptpath: "" // 为boxmode图片自定义路径 ("" => same script path)
+    preventmultitouchscrolling: true // 防止多触点事件引发滚动
+});
+</number></pre>
 
+</li>
+</ul>
+<h3 id="css之margin和padding"><a href="#css之margin和padding" class="headerlink" title="css之margin和padding"></a>css之margin和padding</h3><ul>
+<li>margin是定义元素与相邻外层元素的间距，而padding定义的是层的边框到层的内容之间的空白</li>
+</ul>
+<h3 id="eclipse的控制台不打印svn日志？"><a href="#eclipse的控制台不打印svn日志？" class="headerlink" title="eclipse的控制台不打印svn日志？"></a>eclipse的控制台不打印svn日志？</h3><p><img src="../../picture/week1-10-01.png" alt="eclipse打印控制台日志"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://allen1995.github.io/2017/10/10/week1/" data-id="cj8lg9o5s0004wkvblb3wnhzf" class="article-share-link" data-share="baidu" data-title="week1">分享到</a>
+      
+
+      
+        <a href="http://allen1995.github.io/2017/10/10/week1/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/06/maven基础/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">maven基础</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2017/10/10/week1/" data-title="week1" data-url="http://allen1995.github.io/2017/10/10/week1/"></div>
+  </section>
 </section>
       
       <aside id="sidebar">
