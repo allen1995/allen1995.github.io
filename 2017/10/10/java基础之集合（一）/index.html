@@ -6,17 +6,17 @@
   
   <title>java基础之集合（一） | Allen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="java基础之集合（一）">
+  <meta name="description" content="集合总览Collection    |–ArrayList: 底层使用的数据结构是数组，扩容办法是通过new一个新数组（长度增加50%），然后把原数组复制过去。                  特点：查询速度快，增删慢。线程不同步，换句话说，效率更高。    |–LinkedList: 底层使用的是链表数据结构。特点：增删速度快，查询速度很慢。    |–Vector:底层使用的是数组。线程同">
 <meta name="keywords" content="java java集合">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java基础之集合（一）">
 <meta property="og:url" content="http://allen1995.github.io/2017/10/10/java基础之集合（一）/index.html">
 <meta property="og:site_name" content="Allen">
-<meta property="og:description" content="java基础之集合（一）">
-<meta property="og:updated_time" content="2017-10-10T15:24:34.138Z">
+<meta property="og:description" content="集合总览Collection    |–ArrayList: 底层使用的数据结构是数组，扩容办法是通过new一个新数组（长度增加50%），然后把原数组复制过去。                  特点：查询速度快，增删慢。线程不同步，换句话说，效率更高。    |–LinkedList: 底层使用的是链表数据结构。特点：增删速度快，查询速度很慢。    |–Vector:底层使用的是数组。线程同">
+<meta property="og:updated_time" content="2017-10-10T15:55:22.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java基础之集合（一）">
-<meta name="twitter:description" content="java基础之集合（一）">
+<meta name="twitter:description" content="集合总览Collection    |–ArrayList: 底层使用的数据结构是数组，扩容办法是通过new一个新数组（长度增加50%），然后把原数组复制过去。                  特点：查询速度快，增删慢。线程不同步，换句话说，效率更高。    |–LinkedList: 底层使用的是链表数据结构。特点：增删速度快，查询速度很慢。    |–Vector:底层使用的是数组。线程同">
   
     <link rel="alternative" href="/atom.xml" title="Allen" type="application/atom+xml">
   
@@ -94,18 +94,48 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="java基础之集合（一）"><a href="#java基础之集合（一）" class="headerlink" title="java基础之集合（一）"></a>java基础之集合（一）</h1><a id="more"></a>
+        <a id="more"></a>
 <h2 id="集合总览"><a href="#集合总览" class="headerlink" title="集合总览"></a>集合总览</h2><p>Collection<br>    |–ArrayList: 底层使用的数据结构是数组，扩容办法是通过new一个新数组（长度增加50%），然后把原数组复制过去。<br>                  特点：查询速度快，增删慢。线程不同步，换句话说，效率更高。<br>    |–LinkedList: 底层使用的是链表数据结构。特点：增删速度快，查询速度很慢。<br>    |–Vector:底层使用的是数组。线程同步，jdk1.0以前使用，在jdk1.2以后被ArrayList取代</p>
+<blockquote>
+<p><strong>链表：链表是一种物理存储单元上非连续、非顺序的存储结构，数据元素的逻辑顺序是通过链表中的指针链接次序实现的。链表由一系列结点（链表中每一个元素称为结点）组成，结点可以在运行时动态生成。每个结点包括两个部分：一个是存储数据元素的数据域，另一个是存储下一个结点地址的指针域.</strong><br>                                                                                     ———-摘自百度  </p>
 <h3 id="1-linkedList的特点"><a href="#1-linkedList的特点" class="headerlink" title="1,linkedList的特点"></a>1,linkedList的特点</h3><ul>
-<li><p>linkedList的特有方法：<br>addFirst();<br>addLast();</p>
-<p>getFirst();<br>getLast();<br>获取元素，但不删除元素。如果集合中没有元素，会出现NoSuchElementException</p>
-<p>removeFirst();<br>removeLast();<br>获取元素，但是元素被删除。如果集合中没有元素，会出现NoSuchElementException</p>
-</li>
+<li>linkedList的特有方法：<br>addFirst();<br>addLast();</li>
+</ul>
+</blockquote>
+<p>  getFirst();<br>  getLast();<br>  获取元素，但不删除元素。如果集合中没有元素，会出现NoSuchElementException</p>
+<p>  removeFirst();<br>  removeLast();<br>  获取元素，但是元素被删除。如果集合中没有元素，会出现NoSuchElementException</p>
+<ul>
 <li><p>jdk1.6以后出现了替代方法<br>offerFirst();<br>offerLast();</p>
 <p>peekFirst();<br>peekLast();<br>获取元素，但是元素不被删除。如果集合中没有元素，会返回null</p>
 <p>pollFirst();<br>pollLast();<br>获取元素，但是元素被删除。如果集合中没有元素，会返回null</p>
 </li>
+<li><p>用链表模拟队列<br>使用LinkedList模拟一个堆栈或队列的数据结构。</p>
+</li>
 </ul>
+<p>堆栈：先进后出 如同一个杯子<br>队列：先进先出 如同一个水管</p>
+<p><strong>代码示例：</strong></p>
+<pre>
+import java.util.*
+Class Queue{
+  private LinkedList link;
+
+  Queue(){
+    link = new LinkedList();
+  }
+
+  public void setQueue(Object obj){
+    link.addFirst(obj);
+  }
+
+  public Object getQueue(){
+    return link.removeLast();
+  }
+
+  public boolean isNull(){
+    retrun link.isEmpty();
+  }
+}
+</pre>
 
       
     </div>
