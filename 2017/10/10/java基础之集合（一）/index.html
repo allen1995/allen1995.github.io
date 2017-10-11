@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://allen1995.github.io/2017/10/10/java基础之集合（一）/index.html">
 <meta property="og:site_name" content="Allen">
 <meta property="og:description" content="集合总览Collection    |–ArrayList: 底层使用的数据结构是数组，扩容办法是通过new一个新数组（长度增加50%），然后把原数组复制过去。                  特点：查询速度快，增删慢。线程不同步，换句话说，效率更高。    |–LinkedList: 底层使用的是链表数据结构。特点：增删速度快，查询速度很慢。    |–Vector:底层使用的是数组。线程同">
-<meta property="og:updated_time" content="2017-10-10T16:11:05.974Z">
+<meta property="og:updated_time" content="2017-10-11T01:36:56.864Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java基础之集合（一）">
 <meta name="twitter:description" content="集合总览Collection    |–ArrayList: 底层使用的数据结构是数组，扩容办法是通过new一个新数组（长度增加50%），然后把原数组复制过去。                  特点：查询速度快，增删慢。线程不同步，换句话说，效率更高。    |–LinkedList: 底层使用的是链表数据结构。特点：增删速度快，查询速度很慢。    |–Vector:底层使用的是数组。线程同">
@@ -97,17 +97,13 @@
         <a id="more"></a>
 <h2 id="集合总览"><a href="#集合总览" class="headerlink" title="集合总览"></a>集合总览</h2><p>Collection<br>    |–ArrayList: 底层使用的数据结构是数组，扩容办法是通过new一个新数组（长度增加50%），然后把原数组复制过去。<br>                  特点：查询速度快，增删慢。线程不同步，换句话说，效率更高。<br>    |–LinkedList: 底层使用的是链表数据结构。特点：增删速度快，查询速度很慢。<br>    |–Vector:底层使用的是数组。线程同步，jdk1.0以前使用，在jdk1.2以后被ArrayList取代</p>
 <blockquote>
-<p><strong>链表：</strong><br>链表是一种物理存储单元上非连续、非顺序的存储结构，数据元素的逻辑顺序是通过链表中的指针链接次序实现的。链表由一系列结点（链表中每一个元素称为结点）组成，结点可以在运行时动态生成。每个结点包括两个部分：一个是存储数据元素的数据域，另一个是存储下一个结点地址的指针域.</p>
-<blockquote>
-<p>—————————————————————————————-摘自百度      </p>
+<p><strong>链表：</strong><br>链表是一种物理存储单元上非连续、非顺序的存储结构，数据元素的逻辑顺序是通过链表中的指针链接次序实现的。链表由一系列结点（链表中每一个元素称为结点）组成，结点可以在运行时动态生成。每个结点包括两个部分：一个是存储数据元素的数据域，另一个是存储下一个结点地址的指针域.<br>—————————————————————————————-摘自百度      </p>
+</blockquote>
 <h3 id="1-linkedList的特点"><a href="#1-linkedList的特点" class="headerlink" title="1,linkedList的特点"></a>1,linkedList的特点</h3><ul>
-<li>linkedList的特有方法：<br>addFirst();<br>addLast();</li>
-</ul>
-</blockquote>
-</blockquote>
-<p>  getFirst();<br>  getLast();<br>  获取元素，但不删除元素。如果集合中没有元素，会出现NoSuchElementException</p>
-<p>  removeFirst();<br>  removeLast();<br>  获取元素，但是元素被删除。如果集合中没有元素，会出现NoSuchElementException</p>
-<ul>
+<li><p>linkedList的特有方法：<br>addFirst();<br>addLast();</p>
+<p>getFirst();<br>getLast();<br>获取元素，但不删除元素。如果集合中没有元素，会出现NoSuchElementException</p>
+<p>removeFirst();<br>removeLast();<br>获取元素，但是元素被删除。如果集合中没有元素，会出现NoSuchElementException</p>
+</li>
 <li><p>jdk1.6以后出现了替代方法<br>offerFirst();<br>offerLast();</p>
 <p>peekFirst();<br>peekLast();<br>获取元素，但是元素不被删除。如果集合中没有元素，会返回null</p>
 <p>pollFirst();<br>pollLast();<br>获取元素，但是元素被删除。如果集合中没有元素，会返回null</p>
@@ -144,11 +140,11 @@ Class Queue{
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://allen1995.github.io/2017/10/10/java基础之集合（一）/" data-id="cj8lrccbo0000p8vb1tpg8kp9" class="article-share-link" data-share="baidu" data-title="java基础之集合（一）">Share</a>
+        <a data-url="http://allen1995.github.io/2017/10/10/java基础之集合（一）/" data-id="cj8md8yzd0000i4vbew4oavgj" class="article-share-link" data-share="baidu" data-title="java基础之集合（一）">分享到</a>
       
 
       
-        <a href="http://allen1995.github.io/2017/10/10/java基础之集合（一）/#ds-thread" class="article-comment-link">Comments</a>
+        <a href="http://allen1995.github.io/2017/10/10/java基础之集合（一）/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -160,9 +156,18 @@ Class Queue{
     
 <nav id="article-nav">
   
+    <a href="/2017/10/11/杂记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          杂记
+        
+      </div>
+    </a>
+  
   
     <a href="/2017/10/10/week1/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">week1</div>
     </a>
   
@@ -181,16 +186,16 @@ Class Queue{
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">-hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java基础/">java基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/makedown/">makedown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/每周总结/">每周总结</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">-hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java基础/">java基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/makedown/">makedown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/每周总结/">每周总结</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">标签</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java基础/">java基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/makedown脚本入门/">makedown脚本入门</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven基础知识/">maven基础知识</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a><span class="tag-list-count">1</span></li></ul>
     </div>
@@ -199,7 +204,7 @@ Class Queue{
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
       <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/java基础/" style="font-size: 10px;">java基础</a> <a href="/tags/makedown脚本入门/" style="font-size: 10px;">makedown脚本入门</a> <a href="/tags/maven基础知识/" style="font-size: 10px;">maven基础知识</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a>
     </div>
@@ -208,18 +213,22 @@ Class Queue{
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/10/11/杂记/">杂记</a>
+          </li>
         
           <li>
             <a href="/2017/10/10/java基础之集合（一）/">java基础之集合（一）</a>
@@ -237,10 +246,6 @@ Class Queue{
             <a href="/2017/09/05/postName/">postName</a>
           </li>
         
-          <li>
-            <a href="/2017/08/26/my-first-blog/">my-first-blog</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -248,7 +253,7 @@ Class Queue{
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Links</h3>
+    <h3 class="widget-title">友情链接</h3>
     <div class="widget">
       <ul>
         
@@ -293,7 +298,7 @@ Class Queue{
 </nav>
   <!-- totop start -->
 <div id="totop">
-<a title="totop"><img src="/img/scrollup.png"/></a>
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
 </div>
 
 <!-- totop end -->
