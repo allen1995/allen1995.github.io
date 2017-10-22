@@ -6,16 +6,16 @@
   
   <title>week2 | Allen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2017-10-22 jenkins自动部署  linux常用命令 多行注释： 首先按esc进入命令行模式下，按下Ctrl + v，进入列（也叫区块）模式; 在行首使用上下键选择需要注释的多行; 按下键盘（大写）“I”键，进入插入模式； 然后输入注释符（“//”、“#”等）; 最后按下“Esc”键。注：在按下esc键后，会稍等一会才会出现注释，不要着急~~时间很短的">
+  <meta name="description" content="2017-10-22 jenkins自动部署">
 <meta property="og:type" content="article">
 <meta property="og:title" content="week2">
 <meta property="og:url" content="http://allen1995.github.io/2017/10/22/week2/index.html">
 <meta property="og:site_name" content="Allen">
-<meta property="og:description" content="2017-10-22 jenkins自动部署  linux常用命令 多行注释： 首先按esc进入命令行模式下，按下Ctrl + v，进入列（也叫区块）模式; 在行首使用上下键选择需要注释的多行; 按下键盘（大写）“I”键，进入插入模式； 然后输入注释符（“//”、“#”等）; 最后按下“Esc”键。注：在按下esc键后，会稍等一会才会出现注释，不要着急~~时间很短的">
-<meta property="og:updated_time" content="2017-10-22T10:56:42.790Z">
+<meta property="og:description" content="2017-10-22 jenkins自动部署">
+<meta property="og:updated_time" content="2017-10-22T13:08:16.027Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="week2">
-<meta name="twitter:description" content="2017-10-22 jenkins自动部署  linux常用命令 多行注释： 首先按esc进入命令行模式下，按下Ctrl + v，进入列（也叫区块）模式; 在行首使用上下键选择需要注释的多行; 按下键盘（大写）“I”键，进入插入模式； 然后输入注释符（“//”、“#”等）; 最后按下“Esc”键。注：在按下esc键后，会稍等一会才会出现注释，不要着急~~时间很短的">
+<meta name="twitter:description" content="2017-10-22 jenkins自动部署">
   
     <link rel="alternative" href="/atom.xml" title="Allen" type="application/atom+xml">
   
@@ -94,15 +94,17 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="2017-10-22"><a href="#2017-10-22" class="headerlink" title="2017-10-22"></a>2017-10-22</h1><ul>
-<li><a href="#top_01">jenkins自动部署</a></li>
+<li><a href="#top_01">jenkins自动部署</a><a id="more"></a> 
+</li>
 </ul>
 <h3 id="linux常用命令"><a href="#linux常用命令" class="headerlink" title="linux常用命令"></a>linux常用命令</h3><ol>
-<li>多行注释：<ol>
+<li><p>多行注释：</p>
+<ol>
 <li>首先按esc进入命令行模式下，按下Ctrl + v，进入列（也叫区块）模式;</li>
 <li>在行首使用上下键选择需要注释的多行;</li>
 <li>按下键盘（大写）“I”键，进入插入模式；</li>
 <li>然后输入注释符（“//”、“#”等）;</li>
-<li>最后按下“Esc”键。<br>注：在按下esc键后，会稍等一会才会出现注释，不要着急~~时间很短的<a id="more"></a> </li>
+<li>最后按下“Esc”键。<br>注：在按下esc键后，会稍等一会才会出现注释，不要着急~~时间很短的</li>
 </ol>
 </li>
 <li><p>删除多行注释：</p>
@@ -129,7 +131,7 @@
 </ol>
 </li>
 </ol>
-<h3 id="linux上安装MAVEN"><a href="#linux上安装MAVEN" class="headerlink" title="linux上安装MAVEN"></a>linux上安装MAVEN</h3><ol>
+<h2 id="linux上安装MAVEN"><a href="#linux上安装MAVEN" class="headerlink" title="linux上安装MAVEN"></a>linux上安装MAVEN</h2><ol>
 <li><p>下载maven<br><a href="http://maven.apache.org/download.cgi" target="_blank" rel="external">http://maven.apache.org/download.cgi</a></p>
 </li>
 <li><p>解压<br>tar xzvf  apache-maven-3.1.0.tar.gz</p>
@@ -144,14 +146,17 @@
 <li><p>验证maven是否配置成功<br>mvn -v</p>
 </li>
 </ol>
-<h3 id="jenkins自动部署"><a href="#jenkins自动部署" class="headerlink" title="jenkins自动部署 "></a>jenkins自动部署 <span id="top_01"></span></h3><ol>
+<h2 id="jenkins自动部署"><a href="#jenkins自动部署" class="headerlink" title="jenkins自动部署 "></a>jenkins自动部署 <span id="top_01"></span></h2><ol>
 <li>常见的jenkins部署报错</li>
 </ol>
 <ul>
 <li>Jenkins升级后出现”java.lang.StackOverflowError”错误解决:<br>将Jenkins的maven插件升级后，问题解决。</li>
 <li><p>安装Jenkins时，java －jar jenkins.war  －－httpPort=8888,出现Jenkins is fully up and running时，说明Jenkins已经安装成功，但有时候我们却访问不了，是因为没有打开防火墙，</p>
 <p>  打开防火墙,使外部能访问</p>
-<h1 id="sbin-iptables-I-INPUT-p-tcp-–dport-8888-j-ACCEPT"><a href="#sbin-iptables-I-INPUT-p-tcp-–dport-8888-j-ACCEPT" class="headerlink" title="/sbin/iptables -I INPUT -p tcp –dport 8888 -j ACCEPT"></a>/sbin/iptables -I INPUT -p tcp –dport 8888 -j ACCEPT</h1><h1 id="service-iptables-save"><a href="#service-iptables-save" class="headerlink" title="service iptables save"></a>service iptables save</h1><h1 id="service-iptables-restart"><a href="#service-iptables-restart" class="headerlink" title="service iptables restart"></a>service iptables restart</h1></li>
+<p>   /sbin/iptables -I INPUT -p tcp –dport 8888 -j ACCEPT</p>
+<p>   service iptables save</p>
+<p>   service iptables restart</p>
+</li>
 <li><p>Jenkins 更新插件出现 java.net.UnknownHostException: updates.jenkins-ci.org 解决方法：</p>
 </li>
 </ul>
@@ -168,11 +173,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://allen1995.github.io/2017/10/22/week2/" data-id="cj92n4kfg000a2cvbi6xu11hi" class="article-share-link" data-share="baidu" data-title="week2">分享到</a>
+        <a data-url="http://allen1995.github.io/2017/10/22/week2/" data-id="cj92n4kfg000a2cvbi6xu11hi" class="article-share-link" data-share="baidu" data-title="week2">Share</a>
       
 
       
-        <a href="http://allen1995.github.io/2017/10/22/week2/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://allen1995.github.io/2017/10/22/week2/#ds-thread" class="article-comment-link">Comments</a>
       
 
       
@@ -184,7 +189,7 @@
   
   
     <a href="/2017/10/10/java基础之集合（一）/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">java基础之集合（一）</div>
     </a>
   
@@ -203,7 +208,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">-hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java基础/">java基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/makedown/">makedown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/每周总结/">每周总结</a><span class="category-list-count">2</span></li></ul>
     </div>
@@ -212,7 +217,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java基础/">java基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/makedown脚本入门/">makedown脚本入门</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven基础知识/">maven基础知识</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a><span class="tag-list-count">1</span></li></ul>
     </div>
@@ -221,7 +226,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/java基础/" style="font-size: 10px;">java基础</a> <a href="/tags/makedown脚本入门/" style="font-size: 10px;">makedown脚本入门</a> <a href="/tags/maven基础知识/" style="font-size: 10px;">maven基础知识</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a>
     </div>
@@ -230,7 +235,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">2</span></li></ul>
     </div>
@@ -239,7 +244,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">近期文章</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -270,7 +275,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">友情链接</h3>
+    <h3 class="widget-title">Links</h3>
     <div class="widget">
       <ul>
         
@@ -315,7 +320,7 @@
 </nav>
   <!-- totop start -->
 <div id="totop">
-<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+<a title="totop"><img src="/img/scrollup.png"/></a>
 </div>
 
 <!-- totop end -->
