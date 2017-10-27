@@ -6,16 +6,16 @@
   
   <title>week3 | Allen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2017-10-23常用的截屏方法 qq获取级联菜单：ctrl+shift+alt+a激活级联菜单，然后点击要弹出的级联菜单，最后按ctrl+shift+a截屏即可。 windows自带的printscreent截屏（一般在F12右边），然后粘贴到支持复制的地方，比如qq的聊天框，还有画图工具等等  阿里云开发规范插件安装阿里云开发规范插件安装教程 总结springJDBC的用法 springJD">
+  <meta name="description" content="2017-10-23">
 <meta property="og:type" content="article">
 <meta property="og:title" content="week3">
 <meta property="og:url" content="http://allen1995.github.io/2017/10/23/week3/index.html">
 <meta property="og:site_name" content="Allen">
-<meta property="og:description" content="2017-10-23常用的截屏方法 qq获取级联菜单：ctrl+shift+alt+a激活级联菜单，然后点击要弹出的级联菜单，最后按ctrl+shift+a截屏即可。 windows自带的printscreent截屏（一般在F12右边），然后粘贴到支持复制的地方，比如qq的聊天框，还有画图工具等等  阿里云开发规范插件安装阿里云开发规范插件安装教程 总结springJDBC的用法 springJD">
-<meta property="og:updated_time" content="2017-10-26T14:39:16.589Z">
+<meta property="og:description" content="2017-10-23">
+<meta property="og:updated_time" content="2017-10-27T12:10:27.605Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="week3">
-<meta name="twitter:description" content="2017-10-23常用的截屏方法 qq获取级联菜单：ctrl+shift+alt+a激活级联菜单，然后点击要弹出的级联菜单，最后按ctrl+shift+a截屏即可。 windows自带的printscreent截屏（一般在F12右边），然后粘贴到支持复制的地方，比如qq的聊天框，还有画图工具等等  阿里云开发规范插件安装阿里云开发规范插件安装教程 总结springJDBC的用法 springJD">
+<meta name="twitter:description" content="2017-10-23">
   
     <link rel="alternative" href="/atom.xml" title="Allen" type="application/atom+xml">
   
@@ -93,7 +93,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="2017-10-23"><a href="#2017-10-23" class="headerlink" title="2017-10-23"></a>2017-10-23</h1><h2 id="常用的截屏方法"><a href="#常用的截屏方法" class="headerlink" title="常用的截屏方法"></a>常用的截屏方法</h2><ul>
+        <h1 id="2017-10-23"><a href="#2017-10-23" class="headerlink" title="2017-10-23"></a>2017-10-23</h1><a id="more"></a>
+<ul>
+<li><a href="#top_00">oracle分页查询</a><h2 id="常用的截屏方法"><a href="#常用的截屏方法" class="headerlink" title="常用的截屏方法"></a>常用的截屏方法</h2></li>
 <li>qq获取级联菜单：ctrl+shift+alt+a激活级联菜单，然后点击要弹出的级联菜单，最后按ctrl+shift+a截屏即可。</li>
 <li>windows自带的printscreent截屏（一般在F12右边），然后粘贴到支持复制的地方，比如qq的聊天框，还有画图工具等等</li>
 </ul>
@@ -102,6 +104,10 @@
 <li>springJDbc里面有newBeanPropertySetter和newBeanPropertyRowMapper,newBeanPropertySetter里有个setValue()方法、<br>用来处理入参，newBeanPropertyRowMapper里mapRow用来出来返参。<br>具体用法参考：<a href="http://blog.csdn.net/chengly0129/article/details/50034641" target="_blank" rel="external">springJDBC的query的用法</a></li>
 </ul>
 <h2 id="chrome调试器的小技巧"><a href="#chrome调试器的小技巧" class="headerlink" title="chrome调试器的小技巧"></a>chrome调试器的小技巧</h2><p>控制台使用copy方法可以复制并格式化需要的json数据。</p>
+<h2 id="oracle分页查询"><a href="#oracle分页查询" class="headerlink" title="oracle分页查询 "></a>oracle分页查询 <span id="top_00"></span></h2><ol>
+<li>物理分页：一次性将所有数据查出来，然后在前端进行分页展示，适合场景，展示数据量较小的时候。</li>
+<li>服务器分页： 每次从数据库查出对应页的数据。<br>注意：在使用fish时，要特别注意datatype和pageData这两个参数，datatype要设置成‘json’，pageData要绑定在<br>当前this对象上。<br><a href="http://www.blogjava.net/conans/articles/219693.html" target="_blank" rel="external">oracle后台sql参考：</a></li>
+</ol>
 
       
     </div>
