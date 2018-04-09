@@ -4,14 +4,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: 技术 | Allen</title>
+  <title>openjdk源码编译 | Allen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Allen">
-<meta property="og:url" content="http://allen1995.github.io/tags/技术/index.html">
+  <meta name="description" content="环境准备">
+<meta name="keywords" content="java jvm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="openjdk源码编译">
+<meta property="og:url" content="http://allen1995.github.io/2018/04/09/openjdk源码编译/index.html">
 <meta property="og:site_name" content="Allen">
+<meta property="og:description" content="环境准备">
+<meta property="og:image" content="http://p3560r0tx.bkt.clouddn.com/allen-codepage/180410/Ldk973g30l.png?imageslim">
+<meta property="og:updated_time" content="2018-04-09T16:37:35.856Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Allen">
+<meta name="twitter:title" content="openjdk源码编译">
+<meta name="twitter:description" content="环境准备">
+<meta name="twitter:image" content="http://p3560r0tx.bkt.clouddn.com/allen-codepage/180410/Ldk973g30l.png?imageslim">
   
     <link rel="alternative" href="/atom.xml" title="Allen" type="application/atom+xml">
   
@@ -63,40 +70,76 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/08/26/my-first-blog/" class="archive-article-date">
-  <time datetime="2017-08-26T13:55:06.000Z" itemprop="datePublished">Aug 26</time>
+      <section id="main"><article id="post-openjdk源码编译" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/09/openjdk源码编译/" class="article-date">
+  <time datetime="2018-04-09T15:51:37.000Z" itemprop="datePublished">2018-04-09</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/26/my-first-blog/">my-first-blog</a>
+    <h1 class="article-title" itemprop="name">
+      openjdk源码编译
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><a id="more"></a>
+<p>centOs7.3（自行安装）<br>jdk1.7 for linux：jdk-7u76-linux-x64（源码编译需要保证centOs已经安装jdk并且比待编译的源码版本低）<br>openjdk1.8源码包：openjdk-8-src-b132-03_mar_2014</p>
+<p>——————————分割线———————————<br>下载方法：<br>链接: <a href="https://pan.baidu.com/s/1qYdPVIk" target="_blank" rel="external">https://pan.baidu.com/s/1qYdPVIk</a> 密码: xh79</p>
+<h2 id="make版本"><a href="#make版本" class="headerlink" title="make版本"></a>make版本</h2><p>OpenJDK8可以使用”config &amp;&amp; make”编译构建，不再使用Ant和ALT_ 环境变量来配置构建。<br>不过需要GNU make 3.81或更新的版本（openjdk8之前需要ant）<br>参考博客：<a href="https://blog.csdn.net/leonliu06/article/details/78495035" target="_blank" rel="external">https://blog.csdn.net/leonliu06/article/details/78495035</a></p>
+<h2 id="安装引导JDK"><a href="#安装引导JDK" class="headerlink" title="安装引导JDK"></a>安装引导JDK</h2><p>省略。。</p>
+<h2 id="安装编译工具类库"><a href="#安装编译工具类库" class="headerlink" title="安装编译工具类库"></a>安装编译工具类库</h2><p>sudo yum install build-essential<br>安装XRender<br>sudo yum install libxrender-dev<br>sudo yum install xorg-dev<br>安装alsa<br>sudo yum install libasound2-dev<br>Cups<br>sudo yum install libcups2-dev<br>安装零碎的工具包<br>sudo yum install gawk zip libxtst-dev libxi-dev libxt-dev</p>
+<h2 id="建立编译脚本"><a href="#建立编译脚本" class="headerlink" title="建立编译脚本"></a>建立编译脚本</h2><p>–with-boot-jdk：指定引导JDK所在目录，以防其他安装的JDK影响（本机上以前安装了JDK8，并配置了JAVA_HOME指向JDK8）；<br>–with-target-bits：指定编译64位系统的JDK；</p>
+<p>为可以进行源码调试，再指定下面三个参数：<br>–with-debug-level=slowdebug：指定可以生成最多的调试信息；<br>–enable-debug-symbols ZIP_DEBUGINFO_FILES=0：生成调试的符号信息，并且不压缩；<br>在openjdk目录下新建build.sh，内容如下:</p>
+<p><pre><br>cd openjdk<br>bash ./configure –with-target-bits=64 –with-boot-jdk=/usr/java/jdk1.7.0_80/ –with-debug-level=slowdebug –enable-debug-symbolsZIP_DEBUGINFO_FILES=0<br>make all ZIP_DEBUGINFO_FILES=0<br></pre></p>
+<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>执行./build.sh<br>编译事件较长，编译完成后在根目录的build目录下会多出一些文件，如图：<br><img src="http://p3560r0tx.bkt.clouddn.com/allen-codepage/180410/Ldk973g30l.png?imageslim" alt="mark"></p>
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><p>参考后续博文。</p>
+<h2 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h2><p>参考博客：<br><a href="https://blog.csdn.net/tjiyu/article/details/53725247" target="_blank" rel="external">https://blog.csdn.net/tjiyu/article/details/53725247</a><br><a href="https://blog.csdn.net/leonliu06/article/details/78495035" target="_blank" rel="external">https://blog.csdn.net/leonliu06/article/details/78495035</a><br><a href="https://www.linuxidc.com/Linux/2017-06/144714.htm" target="_blank" rel="external">https://www.linuxidc.com/Linux/2017-06/144714.htm</a><br><a href="https://blog.csdn.net/sky302761277/article/details/60877759" target="_blank" rel="external">https://blog.csdn.net/sky302761277/article/details/60877759</a><br><a href="https://www.linuxidc.com/Linux/2016-09/135556.htm" target="_blank" rel="external">https://www.linuxidc.com/Linux/2016-09/135556.htm</a></p>
 
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://allen1995.github.io/2018/04/09/openjdk源码编译/" data-id="cjfsgpcai0006o4v7w00az76h" class="article-share-link" data-share="baidu" data-title="openjdk源码编译">Share</a>
+      
+
+      
+        <a href="http://allen1995.github.io/2018/04/09/openjdk源码编译/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-jvm/">java jvm</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/14/vm共享文件夹配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vm共享文件夹配置</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2018/04/09/openjdk源码编译/" data-title="openjdk源码编译" data-url="http://allen1995.github.io/2018/04/09/openjdk源码编译/"></div>
+  </section>
 </section>
       
       <aside id="sidebar">
