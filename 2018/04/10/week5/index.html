@@ -4,14 +4,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: 每周总结 | Allen</title>
+  <title>week5 | Allen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Allen">
-<meta property="og:url" content="http://allen1995.github.io/categories/每周总结/index.html">
+  <meta name="description" content="一、oracle临时表空间被占满的问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="week5">
+<meta property="og:url" content="http://allen1995.github.io/2018/04/10/week5/index.html">
 <meta property="og:site_name" content="Allen">
+<meta property="og:description" content="一、oracle临时表空间被占满的问题">
+<meta property="og:updated_time" content="2018-04-11T09:23:01.959Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Allen">
+<meta name="twitter:title" content="week5">
+<meta name="twitter:description" content="一、oracle临时表空间被占满的问题">
   
     <link rel="alternative" href="/atom.xml" title="Allen" type="application/atom+xml">
   
@@ -63,78 +67,73 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/10/23/week3/" class="archive-article-date">
-  <time datetime="2017-10-23T10:10:53.000Z" itemprop="datePublished">Oct 23</time>
+      <section id="main"><article id="post-week5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/10/week5/" class="article-date">
+  <time datetime="2018-04-10T13:54:09.000Z" itemprop="datePublished">2018-04-10</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/23/week3/">week3</a>
+    <h1 class="article-title" itemprop="name">
+      week5
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/10/22/week2/" class="archive-article-date">
-  <time datetime="2017-10-22T10:34:56.000Z" itemprop="datePublished">Oct 22</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/22/week2/">week2</a>
-    </h1>
-  
+        <h1 id="一、oracle临时表空间被占满的问题"><a href="#一、oracle临时表空间被占满的问题" class="headerlink" title="一、oracle临时表空间被占满的问题"></a>一、oracle临时表空间被占满的问题</h1><a id="more"></a>
+<ul>
+<li>报错ORA-01652的解决办法<br>查询临时表空间使用情况：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">select tablespace_name,</div><div class="line">            current_users,</div><div class="line">            total_blocks,</div><div class="line">            used_blocks,</div><div class="line">            free_blocks</div><div class="line">    from v$sort_segment;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>占用临时表空间的SESSION：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">select DISTINCT se.username,</div><div class="line">                se.sid,</div><div class="line">                su.extents,</div><div class="line">                su.blocks,</div><div class="line">                su.blocks * to_number(rtrim(p.value)) / 1024 / 1024 as Space,</div><div class="line">                tablespace,</div><div class="line">                segtype,</div><div class="line"></div><div class="line">                se.status,</div><div class="line"></div><div class="line">                se.logon_time,</div><div class="line">                se. last_call_et,</div><div class="line">                to_char(sysdate - (se.last_call_et / (60 * 60 * 24)),</div><div class="line">                        &apos;yyyy-mm-dd hh24:mi:ss&apos;) last_work_time,</div><div class="line">                sql_text</div><div class="line">  from v$sort_usage su, v$parameter p, v$session se, v$sql s</div><div class="line">where p.name = &apos;db_block_size&apos;</div><div class="line">   and su.session_addr = se.saddr</div><div class="line">   and s.hash_value = su.sqlhash</div><div class="line">   and s.address = su.sqladdr;</div></pre></td></tr></table></figure></p>
+<p>查询SESSION历史SQL：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">select distinct session_id,</div><div class="line">             y.sql_id,</div><div class="line">             l.sql_text,</div><div class="line">             l.elapsed_time / 1000000,</div><div class="line">             x.CPU_TIME / 1000000,</div><div class="line">             x.executions,</div><div class="line">             x.CPU_TIME / x.executions / 1000000 per_cpu</div><div class="line">  from v$active_session_history y, v$sql l, v$sqlarea x</div><div class="line">where y.sql_id = l.sql_id</div><div class="line">   and l.hash_value = x.hash_value</div><div class="line">   and session_id = 2831</div><div class="line"> order by per_cpu desc;</div></pre></td></tr></table></figure></p>
+<p>解决办法：<br>1.增大临时文件大小：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alter database tempfile ‘/u01/app/oracle/oradata/orcl/temp01.dbf’ resize100m;</div></pre></td></tr></table></figure></p>
+<p>2.将临时数据文件设为自动扩展：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alter database tempfile ‘/u01/app/oracle/oradata/orcl/temp01.dbf’ autoextend on next 5m maxsize unlimited;</div></pre></td></tr></table></figure></p>
+<p>参考博客：<a href="https://www.cnblogs.com/songling/archive/2011/03/04/1970965.html" target="_blank" rel="external">https://www.cnblogs.com/songling/archive/2011/03/04/1970965.html</a></p>
+<p>修改表空间位置参考博客：<a href="http://www.jb51.net/article/127923.htm" target="_blank" rel="external">http://www.jb51.net/article/127923.htm</a></p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/10/10/week1/" class="archive-article-date">
-  <time datetime="2017-10-10T09:11:40.000Z" itemprop="datePublished">Oct 10</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/10/week1/">week1</a>
-    </h1>
-  
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://allen1995.github.io/2018/04/10/week5/" data-id="cjftqbl370009psv7iey3vic0" class="article-share-link" data-share="baidu" data-title="week5">分享到</a>
+      
 
-    </header>
+      
+        <a href="http://allen1995.github.io/2018/04/10/week5/#ds-thread" class="article-comment-link">評論</a>
+      
+
+      
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/04/09/openjdk源码编译/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">openjdk源码编译</div>
+    </a>
   
+</nav>
 
+  
+</article>
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2018/04/10/week5/" data-title="week5" data-url="http://allen1995.github.io/2018/04/10/week5/"></div>
+  </section>
 </section>
       
       <aside id="sidebar">
