@@ -65,6 +65,116 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-野史下酒" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/25/野史下酒/" class="article-date">
+  <time datetime="2018-05-25T00:30:27.000Z" itemprop="datePublished">2018-05-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/25/野史下酒/">野史下酒</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="野史下酒简介"><a href="#野史下酒简介" class="headerlink" title="野史下酒简介"></a>野史下酒简介</h1><p>几册青史煮美酒，三五好友谈笑声。<br>野史下酒私电台，道出不一样的精彩！<br>主播：恶霸波、老帆仔、大飞</p>
+<h1 id="微信公众号"><a href="#微信公众号" class="headerlink" title="微信公众号"></a>微信公众号</h1><p><img src="http://p3560r0tx.bkt.clouddn.com/allen-codepage/180525/dGblE80DDi.png?imageslim" alt="mark"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://allen1995.github.io/2018/05/25/野史下酒/" data-id="cjhl8pwf6000dyov7ciemuiwc" class="article-share-link" data-share="baidu" data-title="野史下酒">Share</a>
+      
+
+      
+        <a href="http://allen1995.github.io/2018/05/25/野史下酒/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/野史下酒公众号/">野史下酒公众号</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Redis概念" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/14/Redis概念/" class="article-date">
+  <time datetime="2018-04-14T14:07:58.000Z" itemprop="datePublished">2018-04-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/14/Redis概念/">Redis概念</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="什么是redis？"><a href="#什么是redis？" class="headerlink" title="什么是redis？"></a>什么是redis？</h1><p>redis是一种key-value型数据库，它的特点呢，是直接使用内存存储，存取速度快。</p>
+<h1 id="Redis的基本的数据结构"><a href="#Redis的基本的数据结构" class="headerlink" title="Redis的基本的数据结构"></a>Redis的基本的数据结构</h1><ul>
+<li><p>String:相比于其它语言的String，它能区分开字符串和整型数据。比如在一个字符串里存储一个数字，你对它的<br>key执行自增命令，它会加1；但是如果字符串里存储的是字符，则会报错。</p>
+</li>
+<li><p>list：它的底层呢，是用链表实现的，它能模拟出栈和队列的功能，所以，可以用redis实现简单的mq消息队列。</p>
+</li>
+<li><p>hash：我的理解，它跟java里的hashmap比较相像，先分配一个hash表，然后用hash算法取到不同的地址，在每个地址<br>下面链式存储。</p>
+</li>
+</ul>
+<hr>
+<h1 id="Redis主从及哨兵"><a href="#Redis主从及哨兵" class="headerlink" title="Redis主从及哨兵"></a>Redis主从及哨兵</h1><ul>
+<li><p>sync机制<br>主从服务器之间为了防止单点故障，在从服务器启动后， 会向主服务器发送sync命令，同步主服务器上面的数据。一般从服务器只能执行读取的命令，不能写入数据。</p>
+</li>
+<li><p>数据备份的方式，有以下两种方法<br>rdb：这种方式的实现原理呢，定期把内存中的数据同步到硬盘中，它的缺点很明显，如果在一个间隔时间内，主机挂了，部分数据还没来得及同步的数据会丢失。<br>aof：日志记录，它会把数据库的每次更改的记录命令，存储到一个aof的日志文件中。相对来说它比rdb更占用内存资源。</p>
+</li>
+</ul>
+<p><strong>实际生产环境中呢，一般选用后者，保证数据不会丢失。当然还是得根据实际得业务场景来做选择，如果只是在redis做缓存，并发量也并不高，数据丢失的可能性就比较小，数据丢失的影响也不大，那用rdb就可以了；反之则用aof</strong></p>
+<ul>
+<li>哨兵机制<br>redis为了更加便捷的保证高可用，在3.X版本中加入了哨兵。哨兵主要在对主从服务器做监控，定期做心跳检测，来确定主从服务器是否正常运行。如果主服务器挂了，哨兵可以自行投票选举出新的主服务器。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://allen1995.github.io/2018/04/14/Redis概念/" data-id="cjhl8pwdv0000yov7ehsqh7tw" class="article-share-link" data-share="baidu" data-title="Redis概念">Share</a>
+      
+
+      
+        <a href="http://allen1995.github.io/2018/04/14/Redis概念/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-week5" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/04/10/week5/" class="article-date">
@@ -97,7 +207,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://allen1995.github.io/2018/04/10/week5/" data-id="cjftqbl370009psv7iey3vic0" class="article-share-link" data-share="baidu" data-title="week5">Share</a>
+        <a data-url="http://allen1995.github.io/2018/04/10/week5/" data-id="cjhl8pwfi000iyov7ggbtbvv5" class="article-share-link" data-share="baidu" data-title="week5">Share</a>
       
 
       
@@ -144,7 +254,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://allen1995.github.io/2018/04/09/openjdk源码编译/" data-id="cjftqbl340006psv7u0wrzmqr" class="article-share-link" data-share="baidu" data-title="openjdk源码编译">Share</a>
+        <a data-url="http://allen1995.github.io/2018/04/09/openjdk源码编译/" data-id="cjhl8pwev000ayov7zg7mumb4" class="article-share-link" data-share="baidu" data-title="openjdk源码编译">Share</a>
       
 
       
@@ -194,7 +304,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://allen1995.github.io/2017/10/29/hello-world/" data-id="cjftqbl2m0001psv7r63hmc33" class="article-share-link" data-share="baidu" data-title="Hello World">Share</a>
+        <a data-url="http://allen1995.github.io/2017/10/29/hello-world/" data-id="cjhl8pwe70001yov7avwwp6s8" class="article-share-link" data-share="baidu" data-title="Hello World">Share</a>
       
 
       
@@ -245,7 +355,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://allen1995.github.io/2017/10/23/week3/" data-id="cjftqbl3a000apsv7netni46d" class="article-share-link" data-share="baidu" data-title="week3">Share</a>
+        <a data-url="http://allen1995.github.io/2017/10/23/week3/" data-id="cjhl8pwfu000pyov7zdjcojdb" class="article-share-link" data-share="baidu" data-title="week3">Share</a>
       
 
       
@@ -297,7 +407,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://allen1995.github.io/2017/10/22/week2/" data-id="cjftqbl3e000dpsv7rgj8pp1t" class="article-share-link" data-share="baidu" data-title="week2">Share</a>
+        <a data-url="http://allen1995.github.io/2017/10/22/week2/" data-id="cjhl8pwfn000kyov756adj7x0" class="article-share-link" data-share="baidu" data-title="week2">Share</a>
       
 
       
@@ -348,7 +458,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://allen1995.github.io/2017/10/10/java基础之集合（一）/" data-id="cjftqbl2z0003psv7skgetw3k" class="article-share-link" data-share="baidu" data-title="java基础之集合（一）">Share</a>
+        <a data-url="http://allen1995.github.io/2017/10/10/java基础之集合（一）/" data-id="cjhl8pwec0003yov7u4gcndw4" class="article-share-link" data-share="baidu" data-title="java基础之集合（一）">Share</a>
       
 
       
@@ -404,7 +514,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://allen1995.github.io/2017/10/10/week1/" data-id="cjftqbl3j000ipsv7xbw310bf" class="article-share-link" data-share="baidu" data-title="week1">Share</a>
+        <a data-url="http://allen1995.github.io/2017/10/10/week1/" data-id="cjhl8pweq0006yov72wgyu0jg" class="article-share-link" data-share="baidu" data-title="week1">Share</a>
       
 
       
@@ -451,7 +561,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://allen1995.github.io/2017/09/06/maven基础/" data-id="cjftqbl2g0000psv74au80cqa" class="article-share-link" data-share="baidu" data-title="maven基础">Share</a>
+        <a data-url="http://allen1995.github.io/2017/09/06/maven基础/" data-id="cjhl8pwec0004yov7wirptkvm" class="article-share-link" data-share="baidu" data-title="maven基础">Share</a>
       
 
       
@@ -468,113 +578,11 @@
 
 
   
-    <article id="post-postName" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/05/postName/" class="article-date">
-  <time datetime="2017-09-05T06:31:38.000Z" itemprop="datePublished">2017-09-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/makedown/">makedown</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/05/postName/">postName</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="makedown基本知识"><a href="#makedown基本知识" class="headerlink" title="makedown基本知识"></a>makedown基本知识</h1>
-        
-          <p class="article-more-link">
-            <a href="/2017/09/05/postName/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://allen1995.github.io/2017/09/05/postName/" data-id="cjftqbl3g000fpsv70wtxcfmg" class="article-share-link" data-share="baidu" data-title="postName">Share</a>
-      
-
-      
-        <a href="http://allen1995.github.io/2017/09/05/postName/#ds-thread" class="article-comment-link">Comments</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/makedown脚本入门/">makedown脚本入门</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
 
 
-  
-    <article id="post-my-first-blog" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/26/my-first-blog/" class="article-date">
-  <time datetime="2017-08-26T13:55:06.000Z" itemprop="datePublished">2017-08-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/hexo/">-hexo</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/26/my-first-blog/">my-first-blog</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这是我的第一遍博客。<br>大家好。</p>
-        
-          <p class="article-more-link">
-            <a href="/2017/08/26/my-first-blog/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://allen1995.github.io/2017/08/26/my-first-blog/" data-id="cjftqbl310004psv7gatwi7gx" class="article-share-link" data-share="baidu" data-title="my-first-blog">Share</a>
-      
-
-      
-        <a href="http://allen1995.github.io/2017/08/26/my-first-blog/#ds-thread" class="article-comment-link">Comments</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
 </section>
       
       <aside id="sidebar">
@@ -592,7 +600,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java基础/">java基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/makedown脚本入门/">makedown脚本入门</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven基础知识/">maven基础知识</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java基础/">java基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/makedown脚本入门/">makedown脚本入门</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven基础知识/">maven基础知识</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/野史下酒公众号/">野史下酒公众号</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -601,7 +609,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/java基础/" style="font-size: 10px;">java基础</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/makedown脚本入门/" style="font-size: 10px;">makedown脚本入门</a> <a href="/tags/maven基础知识/" style="font-size: 10px;">maven基础知识</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a>
+      <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/java基础/" style="font-size: 10px;">java基础</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/makedown脚本入门/" style="font-size: 10px;">makedown脚本入门</a> <a href="/tags/maven基础知识/" style="font-size: 10px;">maven基础知识</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a> <a href="/tags/野史下酒公众号/" style="font-size: 10px;">野史下酒公众号</a>
     </div>
   </div>
 
@@ -610,7 +618,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -622,6 +630,14 @@
       <ul>
         
           <li>
+            <a href="/2018/05/25/野史下酒/">野史下酒</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/14/Redis概念/">Redis概念</a>
+          </li>
+        
+          <li>
             <a href="/2018/04/10/week5/">week5</a>
           </li>
         
@@ -631,14 +647,6 @@
         
           <li>
             <a href="/2017/10/29/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/23/week3/">week3</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/22/week2/">week2</a>
           </li>
         
       </ul>

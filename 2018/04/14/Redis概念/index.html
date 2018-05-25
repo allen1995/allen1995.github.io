@@ -4,14 +4,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: java | Allen</title>
+  <title>Redis概念 | Allen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Allen">
-<meta property="og:url" content="http://allen1995.github.io/tags/java/index.html">
+  <meta name="description" content="什么是redis？redis是一种key-value型数据库，它的特点呢，是直接使用内存存储，存取速度快。 Redis的基本的数据结构 String:相比于其它语言的String，它能区分开字符串和整型数据。比如在一个字符串里存储一个数字，你对它的key执行自增命令，它会加1；但是如果字符串里存储的是字符，则会报错。  list：它的底层呢，是用链表实现的，它能模拟出栈和队列的功能，所以，可以用r">
+<meta name="keywords" content="Redis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis概念">
+<meta property="og:url" content="http://allen1995.github.io/2018/04/14/Redis概念/index.html">
 <meta property="og:site_name" content="Allen">
+<meta property="og:description" content="什么是redis？redis是一种key-value型数据库，它的特点呢，是直接使用内存存储，存取速度快。 Redis的基本的数据结构 String:相比于其它语言的String，它能区分开字符串和整型数据。比如在一个字符串里存储一个数字，你对它的key执行自增命令，它会加1；但是如果字符串里存储的是字符，则会报错。  list：它的底层呢，是用链表实现的，它能模拟出栈和队列的功能，所以，可以用r">
+<meta property="og:updated_time" content="2018-04-14T14:48:28.965Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Allen">
+<meta name="twitter:title" content="Redis概念">
+<meta name="twitter:description" content="什么是redis？redis是一种key-value型数据库，它的特点呢，是直接使用内存存储，存取速度快。 Redis的基本的数据结构 String:相比于其它语言的String，它能区分开字符串和整型数据。比如在一个字符串里存储一个数字，你对它的key执行自增命令，它会加1；但是如果字符串里存储的是字符，则会报错。  list：它的底层呢，是用链表实现的，它能模拟出栈和队列的功能，所以，可以用r">
   
     <link rel="alternative" href="/atom.xml" title="Allen" type="application/atom+xml">
   
@@ -63,69 +68,93 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/04/09/openjdk源码编译/" class="archive-article-date">
-  <time datetime="2018-04-09T15:51:37.000Z" itemprop="datePublished">Apr 9</time>
+      <section id="main"><article id="post-Redis概念" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/14/Redis概念/" class="article-date">
+  <time datetime="2018-04-14T14:07:58.000Z" itemprop="datePublished">2018-04-14</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/09/openjdk源码编译/">openjdk源码编译</a>
+    <h1 class="article-title" itemprop="name">
+      Redis概念
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
+    <div class="article-entry" itemprop="articleBody">
       
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/10/10/java基础之集合（一）/" class="archive-article-date">
-  <time datetime="2017-10-10T15:08:01.000Z" itemprop="datePublished">Oct 10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/10/java基础之集合（一）/">java基础之集合（一）</a>
-    </h1>
-  
+        <h1 id="什么是redis？"><a href="#什么是redis？" class="headerlink" title="什么是redis？"></a>什么是redis？</h1><p>redis是一种key-value型数据库，它的特点呢，是直接使用内存存储，存取速度快。</p>
+<h1 id="Redis的基本的数据结构"><a href="#Redis的基本的数据结构" class="headerlink" title="Redis的基本的数据结构"></a>Redis的基本的数据结构</h1><ul>
+<li><p>String:相比于其它语言的String，它能区分开字符串和整型数据。比如在一个字符串里存储一个数字，你对它的<br>key执行自增命令，它会加1；但是如果字符串里存储的是字符，则会报错。</p>
+</li>
+<li><p>list：它的底层呢，是用链表实现的，它能模拟出栈和队列的功能，所以，可以用redis实现简单的mq消息队列。</p>
+</li>
+<li><p>hash：我的理解，它跟java里的hashmap比较相像，先分配一个hash表，然后用hash算法取到不同的地址，在每个地址<br>下面链式存储。</p>
+</li>
+</ul>
+<hr>
+<h1 id="Redis主从及哨兵"><a href="#Redis主从及哨兵" class="headerlink" title="Redis主从及哨兵"></a>Redis主从及哨兵</h1><ul>
+<li><p>sync机制<br>主从服务器之间为了防止单点故障，在从服务器启动后， 会向主服务器发送sync命令，同步主服务器上面的数据。一般从服务器只能执行读取的命令，不能写入数据。</p>
+</li>
+<li><p>数据备份的方式，有以下两种方法<br>rdb：这种方式的实现原理呢，定期把内存中的数据同步到硬盘中，它的缺点很明显，如果在一个间隔时间内，主机挂了，部分数据还没来得及同步的数据会丢失。<br>aof：日志记录，它会把数据库的每次更改的记录命令，存储到一个aof的日志文件中。相对来说它比rdb更占用内存资源。</p>
+</li>
+</ul>
+<p><strong>实际生产环境中呢，一般选用后者，保证数据不会丢失。当然还是得根据实际得业务场景来做选择，如果只是在redis做缓存，并发量也并不高，数据丢失的可能性就比较小，数据丢失的影响也不大，那用rdb就可以了；反之则用aof</strong></p>
+<ul>
+<li>哨兵机制<br>redis为了更加便捷的保证高可用，在3.X版本中加入了哨兵。哨兵主要在对主从服务器做监控，定期做心跳检测，来确定主从服务器是否正常运行。如果主服务器挂了，哨兵可以自行投票选举出新的主服务器。</li>
+</ul>
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://allen1995.github.io/2018/04/14/Redis概念/" data-id="cjhl8pwdv0000yov7ehsqh7tw" class="article-share-link" data-share="baidu" data-title="Redis概念">Share</a>
+      
 
+      
+        <a href="http://allen1995.github.io/2018/04/14/Redis概念/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/05/25/野史下酒/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          野史下酒
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/04/10/week5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">week5</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2018/04/14/Redis概念/" data-title="Redis概念" data-url="http://allen1995.github.io/2018/04/14/Redis概念/"></div>
+  </section>
 </section>
       
       <aside id="sidebar">
